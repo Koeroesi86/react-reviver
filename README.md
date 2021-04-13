@@ -7,12 +7,13 @@
 
 ### Usage
 
-```shell script
+```shell
 yarn add @koeroesi86/react-reviver
 ```
 
 ```typescript jsx
-import { ReviverProvider, ReviverLayout} from "./index";
+import { ReviverProvider, ReviverLayout} from "@koeroesi86/react-reviver";
+
 const components: ComponentRegistry = {
   wrapper: ({ children, background }) => <div style={{ backgroundColor: background }}>{children}</div>,
   hello: ({ text }) => <h1>{text}</h1>,
