@@ -8,8 +8,9 @@ cache:
     - .cache
 script:
   - export YARN_CACHE_FOLDER=$TRAVIS_BUILD_DIR/.cache/yarn
-  - export NODE_ENV=production
+  - export NODE_ENV=development
   - export TRAVIS_TAG="$(git rev-parse --short ${TRAVIS_COMMIT})"
+  - yarn install --frozen-lockfile
   - yarn lint
   - yarn build
   - yarn generate-version
