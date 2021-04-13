@@ -14,7 +14,7 @@
     "access": "public"
   },
   "scripts": {
-    "build": "yarn install && rm -rf ./dist && webpack --progress",
+    "build": "yarn install && rm -rf ./dist && webpack",
     "dev": "yarn build && webpack --watch --progress",
     "lint": "eslint",
     "generate-version": "node ./scripts/version.js"
