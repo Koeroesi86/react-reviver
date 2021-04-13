@@ -79,11 +79,6 @@
     "@nodelib/fs.scandir" "2.1.4"
     fastq "^1.6.0"
 
-"@types/detect-indent@0.1.30":
-  version "0.1.30"
-  resolved "https://registry.yarnpkg.com/@types/detect-indent/-/detect-indent-0.1.30.tgz#dc682bb412b4e65ba098e70edad73b4833fb910d"
-  integrity sha1-3GgrtBK05lugmOcO2tc7SDP7kQ0=
-
 "@types/eslint-scope@^3.7.0":
   version "3.7.0"
   resolved "https://registry.yarnpkg.com/@types/eslint-scope/-/eslint-scope-3.7.0.tgz#4792816e31119ebd506902a482caec4951fabd86"
@@ -110,14 +105,6 @@
   resolved "https://registry.yarnpkg.com/@types/estree/-/estree-0.0.46.tgz#0fb6bfbbeabd7a30880504993369c4bf1deab1fe"
   integrity sha512-laIjwTQaD+5DukBZaygQ79K1Z0jb1bPEMRrkXSLjtCcZm+abyp5YbrqpSLzD42FwWW6gK/aS4NYpJ804nG2brg==
 
-"@types/glob@5.0.30":
-  version "5.0.30"
-  resolved "https://registry.yarnpkg.com/@types/glob/-/glob-5.0.30.tgz#1026409c5625a8689074602808d082b2867b8a51"
-  integrity sha1-ECZAnFYlqGiQdGAoCNCCsoZ7ilE=
-  dependencies:
-    "@types/minimatch" "*"
-    "@types/node" "*"
-
 "@types/json-schema@*", "@types/json-schema@^7.0.3", "@types/json-schema@^7.0.6":
   version "7.0.7"
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.7.tgz#98a993516c859eb0d5c4c8f098317a9ea68db9ad"
@@ -128,25 +115,10 @@
   resolved "https://registry.yarnpkg.com/@types/json5/-/json5-0.0.29.tgz#ee28707ae94e11d2b827bcbe5270bcea7f3e71ee"
   integrity sha1-7ihweulOEdK4J7y+UnC86n8+ce4=
 
-"@types/minimatch@*":
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/@types/minimatch/-/minimatch-3.0.4.tgz#f0ec25dbf2f0e4b18647313ac031134ca5b24b21"
-  integrity sha512-1z8k4wzFnNjVK/tlxvrWuK5WMt6mydWWP7+zvH5eFep4oj+UkrfiJTRtjCeBXNpwaA/FYqqtb4/QS4ianFpIRA==
-
-"@types/mkdirp@0.3.29":
-  version "0.3.29"
-  resolved "https://registry.yarnpkg.com/@types/mkdirp/-/mkdirp-0.3.29.tgz#7f2ad7ec55f914482fc9b1ec4bb1ae6028d46066"
-  integrity sha1-fyrX7FX5FEgvybHsS7GuYCjUYGY=
-
 "@types/node@*":
   version "14.14.37"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.37.tgz#a3dd8da4eb84a996c36e331df98d82abd76b516e"
   integrity sha512-XYmBiy+ohOR4Lh5jE379fV2IU+6Jn4g5qASinhitfyO71b/sCo6MKsMLF5tc7Zf2CE8hViVQyYSobJNke8OvUw==
-
-"@types/node@8.0.0":
-  version "8.0.0"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-8.0.0.tgz#acaa89247afddc7967e9902fd11761dadea1a555"
-  integrity sha512-j2tekvJCO7j22cs+LO6i0kRPhmQ9MXaPZ55TzOc1lzkN5b6BWqq4AFjl04s1oRRQ1v5rSe+KEvnLUSTonuls/A==
 
 "@types/prop-types@*":
   version "15.7.3"
@@ -657,7 +629,7 @@ colorette@^1.2.1, colorette@^1.2.2:
   resolved "https://registry.yarnpkg.com/colorette/-/colorette-1.2.2.tgz#cbcc79d5e99caea2dbf10eb3a26fd8b3e6acfa94"
   integrity sha512-MKGMzyfeuutC/ZJ1cba9NqcNpfeqMUcYmyF1ZFY6/Cn7CNSAKx6a+s48sqLqyAiZuaP2TcqMhoo+dlwFnVxT9w==
 
-commander@^2.20.0, commander@^2.9.0:
+commander@^2.20.0:
   version "2.20.3"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.3.tgz#fd485e84c03eb4881c20722ba48035e8531aeb33"
   integrity sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==
@@ -742,14 +714,6 @@ define-properties@^1.1.3:
   dependencies:
     object-keys "^1.0.12"
 
-detect-indent@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/detect-indent/-/detect-indent-0.2.0.tgz#042914498979ac2d9f3c73e4ff3e6877d3bc92b6"
-  integrity sha1-BCkUSYl5rC2fPHPk/z5od9O8krY=
-  dependencies:
-    get-stdin "^0.1.0"
-    minimist "^0.1.0"
-
 dir-glob@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/dir-glob/-/dir-glob-3.0.1.tgz#56dbf73d992a4a93ba1584f4534063fd2e41717f"
@@ -786,20 +750,6 @@ dts-bundle-generator@^5.9.0:
   dependencies:
     typescript ">=3.0.1"
     yargs "^15.3.1"
-
-dts-bundle@^0.7.3:
-  version "0.7.3"
-  resolved "https://registry.yarnpkg.com/dts-bundle/-/dts-bundle-0.7.3.tgz#372b7bb69c820782e6382f400739a69dced3d59a"
-  integrity sha1-Nyt7tpyCB4LmOC9ABzmmnc7T1Zo=
-  dependencies:
-    "@types/detect-indent" "0.1.30"
-    "@types/glob" "5.0.30"
-    "@types/mkdirp" "0.3.29"
-    "@types/node" "8.0.0"
-    commander "^2.9.0"
-    detect-indent "^0.2.0"
-    glob "^6.0.4"
-    mkdirp "^0.5.0"
 
 electron-to-chromium@^1.3.712:
   version "1.3.713"
@@ -1260,11 +1210,6 @@ get-intrinsic@^1.0.2, get-intrinsic@^1.1.0, get-intrinsic@^1.1.1:
     has "^1.0.3"
     has-symbols "^1.0.1"
 
-get-stdin@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/get-stdin/-/get-stdin-0.1.0.tgz#5998af24aafc802d15c82c685657eeb8b10d4a91"
-  integrity sha1-WZivJKr8gC0VyCxoVlfuuLENSpE=
-
 get-stream@^6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/get-stream/-/get-stream-6.0.0.tgz#3e0012cb6827319da2706e601a1583e8629a6718"
@@ -1281,17 +1226,6 @@ glob-to-regexp@^0.4.1:
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/glob-to-regexp/-/glob-to-regexp-0.4.1.tgz#c75297087c851b9a578bd217dd59a92f59fe546e"
   integrity sha512-lkX1HJXwyMcprw/5YUZc2s7DrpAiHB21/V+E1rHUrVNokkvB6bqMzT0VfV6/86ZNabt1k14YOIaT7nDvOX3Iiw==
-
-glob@^6.0.4:
-  version "6.0.4"
-  resolved "https://registry.yarnpkg.com/glob/-/glob-6.0.4.tgz#0f08860f6a155127b2fadd4f9ce24b1aab6e4d22"
-  integrity sha1-DwiGD2oVUSey+t1PnOJLGqtuTSI=
-  dependencies:
-    inflight "^1.0.4"
-    inherits "2"
-    minimatch "2 || 3"
-    once "^1.3.0"
-    path-is-absolute "^1.0.0"
 
 glob@^7.1.3, glob@^7.1.6:
   version "7.1.6"
@@ -1749,29 +1683,17 @@ mimic-fn@^2.1.0:
   resolved "https://registry.yarnpkg.com/mimic-fn/-/mimic-fn-2.1.0.tgz#7ed2c2ccccaf84d3ffcb7a69b57711fc2083401b"
   integrity sha512-OqbOk5oEQeAZ8WXWydlu9HJjz9WVdEIvamMCcXmuqUYjTknH/sqsWvhQ3vgwKFRR1HpjvNBKQ37nbJgYzGqGcg==
 
-"minimatch@2 || 3", minimatch@^3.0.4:
+minimatch@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-3.0.4.tgz#5166e286457f03306064be5497e8dbb0c3d32083"
   integrity sha512-yJHVQEhyqPLUTgt9B83PXu6W3rx4MvvHvSUvToogpwoGDOUQ+yDrR0HRot+yOCdCO7u4hX3pWft6kWBBcqh0UA==
   dependencies:
     brace-expansion "^1.1.7"
 
-minimist@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/minimist/-/minimist-0.1.0.tgz#99df657a52574c21c9057497df742790b2b4c0de"
-  integrity sha1-md9lelJXTCHJBXSX33QnkLK0wN4=
-
 minimist@^1.2.0, minimist@^1.2.5:
   version "1.2.5"
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
   integrity sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==
-
-mkdirp@^0.5.0:
-  version "0.5.5"
-  resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-0.5.5.tgz#d91cefd62d1436ca0f41620e251288d420099def"
-  integrity sha512-NKmAlESf6jMGym1++R0Ra7wvhV+wFW63FaSOFPwRahvea0gMUcGUhVeAg/0BC0wiv9ih5NYPB1Wn1UEI1/L+xQ==
-  dependencies:
-    minimist "^1.2.5"
 
 ms@2.0.0:
   version "2.0.0"
