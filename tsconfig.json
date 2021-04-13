@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "outDir": "./dist/",
+    "noImplicitAny": false,
+    "declaration": true,
+    "module": "es6",
+    "moduleResolution": "Node",
+    "target": "es2018",
+    "jsx": "react",
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "sourceMap": true
+  },
+  "paths": {
+    "@koeroesi86/react-reviver": [ "index.d.ts", "./src/index.tsx" ]
+  }
+}

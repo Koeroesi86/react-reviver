@@ -1,0 +1,47 @@
+{
+  "name": "@koeroesi86/react-reviver",
+  "version": "1.0.0",
+  "main": "dist/package",
+  "typings": "./index.d.ts",
+  "license": "MIT",
+  "description": "React component reviver",
+  "author": {
+    "name": "Krisztian Korosi",
+    "url": "https://github.com/Koeroesi86"
+  },
+  "repository": "github:Koeroesi86/react-reviver",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "yarn install && rm -rf ./dist && webpack --progress",
+    "dev": "yarn build && webpack --watch --progress",
+    "generate-version": "node ./scripts/version.js"
+  },
+  "dependencies": {
+    "react": "^17.0.2"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.3",
+    "@types/uuid": "^8.3.0",
+    "@typescript-eslint/eslint-plugin": "^4.21.0",
+    "@typescript-eslint/parser": "^4.21.0",
+    "eslint": "^7.24.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "prettier": "^2.2.1",
+    "prop-types": "^15.7.2",
+    "react-dom": "^17.0.2",
+    "ts-loader": "^8.1.0",
+    "tsconfig-paths-webpack-plugin": "^3.5.1",
+    "typescript": "^4.2.4",
+    "uuid": "^8.3.2",
+    "webpack": "^5.31.2",
+    "webpack-cli": "^4.6.0"
+  }
+}
