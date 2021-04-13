@@ -2,7 +2,7 @@
   "name": "@koeroesi86/react-reviver",
   "version": "1.0.0",
   "main": "dist/package",
-  "types": "index.d.ts",
+  "types": "dist/index.d.ts",
   "license": "MIT",
   "description": "React component reviver",
   "author": {
@@ -14,7 +14,7 @@
     "access": "public"
   },
   "scripts": {
-    "build": "yarn install && rm -rf ./dist && webpack",
+    "build": "yarn install && rm -rf ./dist && dts-bundle-generator --config dts.json && webpack",
     "dev": "yarn build && webpack --watch --progress",
     "lint": "eslint",
     "generate-version": "node ./scripts/version.js"
@@ -27,6 +27,8 @@
     "@types/uuid": "^8.3.0",
     "@typescript-eslint/eslint-plugin": "^4.21.0",
     "@typescript-eslint/parser": "^4.21.0",
+    "dts-bundle": "^0.7.3",
+    "dts-bundle-generator": "^5.9.0",
     "eslint": "^7.24.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.1.0",

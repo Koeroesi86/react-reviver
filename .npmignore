@@ -2,10 +2,12 @@ src
 .idea
 .cache
 yarn-error.log
-.prettierc
+.prettierrc
 .eslintrc
 example
 dist/example
 .travis.yml
 webpack.config.js
 scripts
+dts.json
+tsconfig.json
