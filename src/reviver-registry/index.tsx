@@ -19,7 +19,6 @@ class RegistryContext implements RegistryContextType {
       console.warn(`Alias not registered: ${alias}`)
       return () => null;
     }
-    console.log("alias", alias)
 
     return this.components[alias];
   };
