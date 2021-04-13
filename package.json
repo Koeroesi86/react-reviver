@@ -2,7 +2,7 @@
   "name": "@koeroesi86/react-reviver",
   "version": "1.0.0",
   "main": "dist/package",
-  "typings": "./index.d.ts",
+  "types": "index.d.ts",
   "license": "MIT",
   "description": "React component reviver",
   "author": {

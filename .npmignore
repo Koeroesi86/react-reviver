@@ -1,0 +1,11 @@
+src
+.idea
+.cache
+yarn-error.log
+.prettierc
+.eslintrc
+example
+dist/example
+.travis.yml
+webpack.config.js
+scripts
