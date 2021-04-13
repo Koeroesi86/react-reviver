@@ -15,7 +15,7 @@ script:
   - yarn build
   - yarn generate-version
 deploy:
-  branch: master
+  branch: main
   provider: npm
   skip_cleanup: true
   email: $NPM_EMAIL
