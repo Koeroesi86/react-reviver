@@ -12,6 +12,7 @@ script:
   - export TRAVIS_TAG="$(git rev-parse --short ${TRAVIS_COMMIT})"
   - yarn install --frozen-lockfile
   - yarn lint
+  - yarn test
   - yarn build
   - yarn generate-version
 deploy:

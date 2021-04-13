@@ -16,6 +16,7 @@
   "scripts": {
     "build": "yarn install && rm -rf ./dist && dts-bundle-generator --config dts.json && webpack",
     "dev": "yarn build && webpack --watch --progress",
+    "test": "jest",
     "lint": "eslint",
     "generate-version": "node ./scripts/version.js"
   },
@@ -23,6 +24,8 @@
     "react": "^17.0.2"
   },
   "devDependencies": {
+    "@testing-library/react": "^11.2.6",
+    "@types/jest": "^26.0.22",
     "@types/react": "^17.0.3",
     "@types/uuid": "^8.3.0",
     "@typescript-eslint/eslint-plugin": "^4.21.0",
@@ -36,9 +39,11 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.23.2",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "jest": "^26.6.3",
     "prettier": "^2.2.1",
     "prop-types": "^15.7.2",
     "react-dom": "^17.0.2",
+    "ts-jest": "^26.5.4",
     "ts-loader": "^8.1.0",
     "tsconfig-paths-webpack-plugin": "^3.5.1",
     "typescript": "^4.2.4",

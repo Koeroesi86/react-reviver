@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`example render should render 1`] = `
+<DocumentFragment>
+  Example:
+  <div
+    style="background-color: rgb(239, 239, 239);"
+  >
+    <h1>
+      It works!
+    </h1>
+  </div>
+</DocumentFragment>
+`;

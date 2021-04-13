@@ -8,11 +8,11 @@ interface ComponentReviverProps {
   children: React.ReactNode,
 }
 
-const ComponentReviver: React.FC<ComponentReviverProps> = ({ type, props }) => {
+const ComponentReviver: React.FC<ComponentReviverProps> = ({ type, props, children }) => {
   const registry = useReviverRegistry();
   const Component = registry.resolve(type);
   return (
-    <Component {...props} />
+    <Component {...props}>{children}</Component>
   );
 };
 

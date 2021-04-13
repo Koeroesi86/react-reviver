@@ -10,14 +10,14 @@ interface ChildrenReviverProps {
 
 const ChildrenReviver: React.FC<ChildrenReviverProps> = ({ children }) => (
   <>
-    {children.map((item) => (
-        <ComponentReviver
-          type={item.type}
-          props={item.props}
-          key={`ChildrenReviver-${item.type}-${item.id || uuid()}`}
-        >
-          <ChildrenReviver>{item.children}</ChildrenReviver>
-        </ComponentReviver>
+    {children && children.map((item) => (
+      <ComponentReviver
+        type={item.type}
+        props={item.props}
+        key={`ChildrenReviver-${item.type}-${item.id || uuid()}`}
+      >
+        <ChildrenReviver>{item.children}</ChildrenReviver>
+      </ComponentReviver>
     ))}
   </>
 );

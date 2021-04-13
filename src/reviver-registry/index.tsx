@@ -7,7 +7,7 @@ import {
   ReviverRegistryProviderProps
 } from "../types";
 
-class RegistryContext implements RegistryContextType{
+class RegistryContext implements RegistryContextType {
   private readonly components: ComponentRegistry;
 
   constructor(components: ComponentRegistry) {
