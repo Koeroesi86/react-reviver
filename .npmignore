@@ -9,5 +9,5 @@ dist/example
 .travis.yml
 webpack.config.js
 scripts
-dts.json
+dts.config.js
 tsconfig.json
