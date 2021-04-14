@@ -24,7 +24,6 @@ module.exports = [
     output: {
       path: path.resolve(__dirname, "./dist/package"),
       filename: "[name].js",
-      // libraryTarget: 'module',
       library: {
         type: 'commonjs2',
       },
@@ -33,7 +32,7 @@ module.exports = [
       extensions: [ ".ts", ".tsx", ".js", ".jsx" ],
       plugins: [
         new TsconfigPathsPlugin(),
-      ]
+      ],
     },
     module: {
       rules: [
