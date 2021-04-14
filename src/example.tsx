@@ -1,17 +1,11 @@
 /* eslint-disable react/prop-types */
-import React, { FC } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
-import { ReviverProvider, ReviverLayout} from "./index";
-import { ComponentRegistry, RevivableComponentType } from "./types";
-
-const Wrapper: FC<{ background: string }> = ({ children, background }) => (
-  <div style={{ backgroundColor: background }}>{children}</div>
-);
-const Hello: FC<{ text: string }> = ({ text }) => <h1>{text}</h1>;
+import { ReviverProvider, ReviverLayout, ComponentRegistry, RevivableComponentType } from "@koeroesi86/react-reviver";
 
 export const components: ComponentRegistry = {
-  wrapper: Wrapper,
-  hello: Hello,
+  wrapper: ({ children, background }) => <div style={{ backgroundColor: background }}>{children}</div>,
+  hello: ({ text }) => <h1>{text}</h1>,
 }
 
 type RevivableComponent =

@@ -14,9 +14,9 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "esModuleInterop": true,
-    "sourceMap": true
-  },
-  "paths": {
-    "@koeroesi86/react-reviver": [ "index.d.ts", "./src/index.tsx" ]
+    "sourceMap": true,
+    "paths": {
+      "@koeroesi86/react-reviver": [ "index.tsx" ]
+    }
   }
 }
