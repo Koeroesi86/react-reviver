@@ -1,6 +1,4 @@
-# @koeroesi86/react-reviver
-
-An awesome layout reviver for data driven React applications.
+[![Build Status](https://travis-ci.com/Koeroesi86/react-reviver.svg?branch=main)](https://travis-ci.com/Koeroesi86/react-reviver) [![npm version](https://badge.fury.io/js/%40koeroesi86%2Freact-reviver.svg)](https://badge.fury.io/js/%40koeroesi86%2Freact-reviver)
 
 ### Install
 
@@ -9,7 +7,8 @@ yarn add @koeroesi86/react-reviver
 ```
 
 ### Usage example
-```typescript jsx
+
+{% highlight tsx linenos %}
 /* eslint-disable react/prop-types */
 import React from "react";
 import ReactDOM from "react-dom";
@@ -41,4 +40,4 @@ if (window && document.getElementById("root")) {
     document.getElementById("root")
   );
 }
-```
+{% endhighlight %}
