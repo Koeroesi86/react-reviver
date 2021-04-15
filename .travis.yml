@@ -1,24 +1,42 @@
 language: node_js
 node_js:
   - "12"
+env:
+  global:
+    - NODE_ENV="development"
+    - YARN_CACHE_FOLDER=$TRAVIS_BUILD_DIR/.cache/yarn
+    - TRAVIS_TAG="$(git rev-parse --short ${TRAVIS_COMMIT})"
 cache:
   yarn: true
   directories:
     - node_modules
     - .cache
-script:
-  - export YARN_CACHE_FOLDER=$TRAVIS_BUILD_DIR/.cache/yarn
-  - export NODE_ENV=development
-  - export TRAVIS_TAG="$(git rev-parse --short ${TRAVIS_COMMIT})"
-  - yarn install --frozen-lockfile
-  - yarn lint
-  - yarn test
-  - yarn build
-  - yarn generate-version
-deploy:
-  on:
-    branch: main
-  provider: npm
-  skip_cleanup: true
-  email: $NPM_EMAIL
-  api_key: $NPM_TOKEN
+    - .dist
+jobs:
+  include:
+    - stage: Test
+      script:
+        - yarn lint
+        - yarn test
+    - stage: Release package
+      if: branch = main
+      script: yarn build
+      deploy:
+        on:
+          branch: main
+        provider: npm
+        skip_cleanup: true
+        email: $NPM_EMAIL
+        api_key: $NPM_TOKEN
+#script:
+#  - yarn lint
+#  - yarn test
+#  - yarn build
+#  - yarn generate-version
+#deploy:
+#  on:
+#    branch: main
+#  provider: npm
+#  skip_cleanup: true
+#  email: $NPM_EMAIL
+#  api_key: $NPM_TOKEN
