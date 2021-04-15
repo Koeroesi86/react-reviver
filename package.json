@@ -10,6 +10,7 @@
     "url": "https://github.com/Koeroesi86"
   },
   "repository": "github:Koeroesi86/react-reviver",
+  "homepage": "https://koeroesi86.github.io/react-reviver/",
   "publishConfig": {
     "access": "public"
   },
