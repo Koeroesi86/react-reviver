@@ -20,7 +20,9 @@ jobs:
         - yarn test
     - stage: Release package
       if: branch = main
-      script: yarn build
+      script:
+        - yarn build
+        - yarn generate-version
       deploy:
         on:
           branch: main
