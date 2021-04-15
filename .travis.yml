@@ -7,7 +7,6 @@ env:
     - YARN_CACHE_FOLDER=$TRAVIS_BUILD_DIR/.cache/yarn
     - TRAVIS_TAG="$(git rev-parse --short ${TRAVIS_COMMIT})"
 cache:
-  yarn: true
   directories:
     - node_modules
     - .cache
@@ -30,15 +29,3 @@ jobs:
         skip_cleanup: true
         email: $NPM_EMAIL
         api_key: $NPM_TOKEN
-#script:
-#  - yarn lint
-#  - yarn test
-#  - yarn build
-#  - yarn generate-version
-#deploy:
-#  on:
-#    branch: main
-#  provider: npm
-#  skip_cleanup: true
-#  email: $NPM_EMAIL
-#  api_key: $NPM_TOKEN
