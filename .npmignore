@@ -11,3 +11,5 @@ webpack.config.js
 scripts
 dts.config.js
 tsconfig.json
+jest.config.js
+docs
