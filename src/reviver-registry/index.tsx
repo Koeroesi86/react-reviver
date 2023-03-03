@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useMemo } from "react";
 import PropTypes from "prop-types";
 import {
   ComponentRegistry,
@@ -16,6 +16,7 @@ class RegistryContext implements RegistryContextType {
 
   resolve = (alias: string): RevivableReactComponent => {
     if (!this.components[alias]) {
+      // eslint-disable-next-line no-console
       console.warn(`Alias not registered: ${alias}`)
       return () => null;
     }
@@ -28,14 +29,16 @@ const context = new RegistryContext({});
 
 export const ReviverRegistryContext = React.createContext(context);
 
-export const ReviverRegistryProvider: React.FC<ReviverRegistryProviderProps> = ({
-  children,
-  components,
-}) => (
-  <ReviverRegistryContext.Provider value={new RegistryContext(components)}>
-    {children}
-  </ReviverRegistryContext.Provider>
-);
+export function ReviverRegistryProvider({
+  children, components,
+}: ReviverRegistryProviderProps) {
+  const registry = useMemo(() => new RegistryContext(components), [components]);
+  return (
+    <ReviverRegistryContext.Provider value={registry}>
+      {children}
+    </ReviverRegistryContext.Provider>
+  );
+}
 
 ReviverRegistryProvider.propTypes = {
   components: PropTypes.objectOf(PropTypes.elementType).isRequired,

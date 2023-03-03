@@ -8,22 +8,24 @@ interface ChildrenReviverProps {
   children?: RevivableComponentType[];
 }
 
-const ChildrenReviver: React.FC<ChildrenReviverProps> = ({ children }) => (
-  <>
-    {children && children.map((item) => (
-      <ComponentReviver
-        type={item.type}
-        props={item.props}
-        key={`ChildrenReviver-${item.type}-${item.id || uuid()}`}
-      >
-        <ChildrenReviver>{item.children}</ChildrenReviver>
-      </ComponentReviver>
-    ))}
-  </>
-);
+function ChildrenReviver({ children }: ChildrenReviverProps) {
+  return (
+    // eslint-disable-next-line react/jsx-no-useless-fragment
+    <>
+      {children && children.map((item) => (
+        <ComponentReviver
+          type={item.type}
+          props={item.props}
+          key={`ChildrenReviver-${item.type}-${item.id || uuid()}`}
+        >
+          <ChildrenReviver>{item.children}</ChildrenReviver>
+        </ComponentReviver>
+      ))}
+    </>
+  );
+}
 
 ChildrenReviver.propTypes = {
-  // @ts-ignore TODO
   children: RevivableElementArray,
 }
 

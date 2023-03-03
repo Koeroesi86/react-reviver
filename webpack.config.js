@@ -4,6 +4,7 @@ const { TsconfigPathsPlugin } = require("tsconfig-paths-webpack-plugin");
 const isDev = process.argv.includes("--watch");
 const mode = isDev ? "development" : "production";
 
+// eslint-disable-next-line no-console
 if (isDev) console.log("Development mode...");
 
 module.exports = [

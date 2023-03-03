@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
+import * as PropTypes from "prop-types";
 import { useReviverRegistry } from "../reviver-registry";
 
 interface ComponentReviverProps {
@@ -8,18 +8,18 @@ interface ComponentReviverProps {
   children: React.ReactNode,
 }
 
-const ComponentReviver: React.FC<ComponentReviverProps> = ({ type, props, children }) => {
+function ComponentReviver({ type, props, children }: ComponentReviverProps) {
   const registry = useReviverRegistry();
   const Component = registry.resolve(type);
   return (
     <Component {...props}>{children}</Component>
   );
-};
+}
 
 ComponentReviver.propTypes = {
   type: PropTypes.string.isRequired,
   props: PropTypes.shape({}),
-  children: PropTypes.node,
+  children: PropTypes.oneOfType([PropTypes.element, PropTypes.arrayOf(PropTypes.element)]),
 };
 
 ComponentReviver.defaultProps = {

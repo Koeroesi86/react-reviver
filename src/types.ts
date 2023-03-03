@@ -21,7 +21,7 @@ export interface ComponentRegistry {
 }
 
 export interface RegistryContextType {
-  resolve: (alias: string) => RevivableReactComponent
+  resolve: (alias: string) => ComponentRegistry[typeof alias]
 }
 
 export interface ReviverRegistryProviderProps {
