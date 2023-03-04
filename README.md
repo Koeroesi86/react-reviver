@@ -1,5 +1,5 @@
 # @koeroesi86/react-reviver
-[![Build Status](https://travis-ci.com/Koeroesi86/react-reviver.svg?branch=main)](https://travis-ci.com/Koeroesi86/react-reviver) [![npm version](https://badge.fury.io/js/%40koeroesi86%2Freact-reviver.svg)](https://badge.fury.io/js/%40koeroesi86%2Freact-reviver)
+[![Publish](https://github.com/Koeroesi86/react-reviver/actions/workflows/publish.yml/badge.svg)](https://github.com/Koeroesi86/react-reviver/actions/workflows/publish.yml) [![npm version](https://badge.fury.io/js/%40koeroesi86%2Freact-reviver.svg)](https://badge.fury.io/js/%40koeroesi86%2Freact-reviver)
 
 ### Dependencies
 * [NodeJS](https://nodejs.org/en/)
