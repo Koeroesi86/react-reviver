@@ -26,7 +26,7 @@ const createRegistry = (components: ComponentRegistry): RegistryContextType => (
   },
 });
 
-export const ReviverRegistryContext = React.createContext(createRegistry({}));
+const ReviverRegistryContext = React.createContext(createRegistry({}));
 
 export function ReviverRegistryProvider({
   children = null, components,

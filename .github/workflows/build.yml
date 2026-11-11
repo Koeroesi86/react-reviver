@@ -32,6 +32,8 @@ jobs:
         run: npm audit signatures
       - name: Lint
         run: npm run lint
+      - name: Fallow
+        run: npm run fallow
       - name: Test
         run: npm run test
       - name: Package version

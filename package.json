@@ -34,6 +34,7 @@
     "lint": "eslint --cache --cache-location .cache/eslint/ --ext .ts,.tsx src",
     "generate-version": "node ./scripts/version.js",
     "test:compat": "node ./scripts/compat-smoke.js",
+    "fallow": "fallow dead-code",
     "example": "node ./example/server.js"
   },
   "devDependencies": {
@@ -52,6 +53,7 @@
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^4.6.2",
+    "fallow": "^3.42.0",
     "jest": "^30.5.2",
     "jest-environment-jsdom": "^30.5.2",
     "prettier": "^3.9.10",

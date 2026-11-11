@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "export NVM_DIR=\"$HOME/.nvm\"; [ -s \"$NVM_DIR/nvm.sh\" ] && . \"$NVM_DIR/nvm.sh\"; nvm use 24 >/dev/null; npm run --silent fallow 2>&1 | tail -30 >&2; exit 0",
+            "timeout": 60
+          }
+        ]
+      }
+    ]
+  }
+}

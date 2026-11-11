@@ -6,10 +6,10 @@ interface NodeReviverProps {
   node: RevivableComponentType;
 }
 
-export const getNodeKey = ({ type, id }: RevivableComponentType, index: number) =>
+const getNodeKey = ({ type, id }: RevivableComponentType, index: number) =>
   `${type}-${id ? `id-${id}` : `index-${index}`}`;
 
-export function reviveNodes(nodes: RevivableComponentType[]) {
+export default function reviveNodes(nodes: RevivableComponentType[]) {
   // eslint-disable-next-line @typescript-eslint/no-use-before-define
   return nodes.map((node, index) => <NodeReviver key={getNodeKey(node, index)} node={node} />);
 }
@@ -28,5 +28,3 @@ function Node({ node }: NodeReviverProps) {
 }
 
 const NodeReviver = memo(Node);
-
-export default NodeReviver;
