@@ -11,11 +11,15 @@
   },
   "repository": "github:Koeroesi86/react-reviver",
   "homepage": "https://koeroesi86.github.io/react-reviver/",
+  "files": [
+    "dist",
+    "!dist/example"
+  ],
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
-    "build": "npm ci && rm -rf ./dist && dts-bundle-generator --config dts.config.js && webpack",
+    "build": "rm -rf ./dist && dts-bundle-generator --config dts.config.js && webpack",
     "dev": "npm run build && webpack --watch --progress",
     "test": "jest",
     "lint": "eslint --cache --cache-location .cache/eslint/ --ext .ts,.tsx src",
