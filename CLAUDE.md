@@ -5,8 +5,8 @@ Small TypeScript library (`@koeroesi86/react-reviver`): revives React trees from
 ## Layout
 - `src/index.tsx` — public exports (`ReviverProvider`, `ReviverLayout`, types). Anything not exported here is private.
 - `src/reviver-registry/` — context + provider; unknown alias warns and renders `() => null`.
-- `src/layout/`, `src/children-reviver/`, `src/component-reviver/` — recursive rendering of `{ type, id?, props?, children? }`.
-- `src/validators.tsx` — PropTypes for layout nodes. `src/types.ts` — public types.
+- `src/layout/`, `src/node-reviver/` — recursive, memoized (by node reference) rendering of `{ type, id?, props?, children? }`; leaves get no `children`.
+- `src/types.ts` — public types. No runtime PropTypes (ignored on React 19).
 - `src/example.tsx` + `src/example.spec.tsx` (+ snapshot) — doubles as the README example and the only test.
 - `scripts/version.js` — CI-only; sets version `YY.MM.<run id>-<ref>`; requires `GITHUB_*` env.
 - `docs/` — GitHub Pages (Jekyll); mirrors README usage. Keep both in sync when the example changes.

@@ -1,52 +1,42 @@
 import React, { useContext, useMemo } from "react";
-import * as PropTypes from "prop-types";
 import {
   ComponentRegistry,
   RegistryContextType,
-  RevivableReactComponent,
   ReviverRegistryProviderProps
 } from "../types";
 
-class RegistryContext implements RegistryContextType {
-  private readonly components: ComponentRegistry;
+// Stable identity: a fresh component per resolve() would remount the node on every render.
+function NullComponent() {
+  return null;
+}
+const warnedAliases = new Set<string>();
 
-  constructor(components: ComponentRegistry) {
-    this.components = components;
-  }
-
-  resolve = (alias: string): RevivableReactComponent => {
-    if (!this.components[alias]) {
-      // eslint-disable-next-line no-console
-      console.warn(`Alias not registered: ${alias}`)
-      return () => null;
+const createRegistry = (components: ComponentRegistry): RegistryContextType => ({
+  resolve: (alias) => {
+    if (Object.prototype.hasOwnProperty.call(components, alias)) {
+      return components[alias];
     }
 
-    return this.components[alias];
-  };
-}
+    if (!warnedAliases.has(alias)) {
+      warnedAliases.add(alias);
+      // eslint-disable-next-line no-console
+      console.warn(`Alias not registered: ${alias}`);
+    }
+    return NullComponent;
+  },
+});
 
-const context = new RegistryContext({});
-
-export const ReviverRegistryContext = React.createContext(context);
+export const ReviverRegistryContext = React.createContext(createRegistry({}));
 
 export function ReviverRegistryProvider({
-  children, components,
+  children = null, components,
 }: ReviverRegistryProviderProps) {
-  const registry = useMemo(() => new RegistryContext(components), [components]);
+  const registry = useMemo(() => createRegistry(components), [components]);
   return (
     <ReviverRegistryContext.Provider value={registry}>
       {children}
     </ReviverRegistryContext.Provider>
   );
 }
-
-ReviverRegistryProvider.propTypes = {
-  components: PropTypes.objectOf(PropTypes.elementType).isRequired,
-  children: PropTypes.node,
-};
-
-ReviverRegistryProvider.defaultProps = {
-  children: null,
-};
 
 export const useReviverRegistry = () => useContext(ReviverRegistryContext);

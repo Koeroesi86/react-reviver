@@ -26,5 +26,5 @@ export interface RegistryContextType {
 
 export interface ReviverRegistryProviderProps {
   components: { [type: string]: RevivableReactComponent };
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
