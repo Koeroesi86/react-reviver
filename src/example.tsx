@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import { ComponentRegistry, RevivableComponentType, ReviverLayout, ReviverProvider } from "@koeroesi86/react-reviver";
 
 export const components: ComponentRegistry = {
@@ -20,12 +20,13 @@ export const layout: RevivableComponent = {
   ]
 };
 
-if (window && document.getElementById("root")) {
-  ReactDOM.render(
+const rootElement = document.getElementById("root");
+
+if (window && rootElement) {
+  createRoot(rootElement).render(
     <ReviverProvider components={components}>
       Example:
       <ReviverLayout data={layout} />
-    </ReviverProvider>,
-    document.getElementById("root")
+    </ReviverProvider>
   );
 }

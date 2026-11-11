@@ -10,10 +10,11 @@ if (!GITHUB_RUN_ID) {
   throw new Error(`GITHUB_RUN_ID: ${GITHUB_RUN_ID}`);
 }
 
+const refName = GITHUB_REF_NAME.replace(/[^0-9A-Za-z-]+/g, '-');
 const now = new Date();
-const version = `${`${now.getFullYear()}`.substring(2)}.${`${now.getMonth() + 1}`.padStart(2, '0')}.${GITHUB_RUN_ID}-${GITHUB_REF_NAME}`;
+const version = `${`${now.getFullYear()}`.substring(2)}.${`${now.getMonth() + 1}`.padStart(2, '0')}.${GITHUB_RUN_ID}-${refName}`;
 
-execSync(`yarn version --no-git-tag-version --new-version "v${version}"`, { shell: true });
+execSync(`npm version --no-git-tag-version "v${version}"`, { shell: true });
 
 // eslint-disable-next-line no-console
 console.log('version set', version);

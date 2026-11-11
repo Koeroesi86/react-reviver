@@ -1,7 +1,7 @@
 src
 .idea
 .cache
-yarn-error.log
+npm-debug.log
 .prettierrc
 .eslintrc
 example
