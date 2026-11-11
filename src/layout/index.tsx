@@ -1,5 +1,5 @@
 import React from "react";
-import { reviveNodes } from "../node-reviver";
+import reviveNodes from "../node-reviver";
 import { RevivableComponentType } from "../types";
 
 export interface LayoutProps {
