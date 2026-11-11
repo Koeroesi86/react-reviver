@@ -66,4 +66,9 @@ npm run build   # dts bundle + webpack into ./dist
 npm run dev     # build + webpack watch
 ```
 
-Open [example/index.html](example/index.html) in the browser.
+Run the Node.js example (server-side renders the layout with the built package):
+
+```shell
+npm run build
+npm run example   # http://localhost:8080, set PORT to change
+```
