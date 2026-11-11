@@ -11,13 +11,18 @@ Small TypeScript library (`@koeroesi86/react-reviver`): revives React trees from
 - `scripts/version.js` — CI-only; sets version `YY.MM.<run id>-<ref>`; requires `GITHUB_*` env.
 - `docs/` — GitHub Pages (Jekyll); mirrors README usage. Keep both in sync when the example changes.
 
+## Node on PATH
+In some sessions (e.g. the VS Code Flatpak) `node`/`npm` are not on `PATH`. Load Node 24 via nvm in the same command before any npm script:
+`export NVM_DIR="$HOME/.nvm"; [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"; nvm use 24 >/dev/null`
+
 ## Commands
 `npm ci` · `npm run lint` · `npm test` · `npm run build` (dts + webpack → `dist/`). Use npm, not yarn.
+`npm run test:compat` smoke-tests the built bundle against the installed React (build first); supported range `react >=16.8.0`, CI covers 16.8/17/18/19.
 Before finishing a code change: lint + test. Update the snapshot only when output intentionally changed.
 
 ## Conventions
 - Follow global style rules (no nested conditions, kebab-case files, avoid `any`/casts; existing `any` in `types.ts` is intentional).
-- React 19: use `createRoot` from `react-dom/client`, never `ReactDOM.render`.
+- Supports React >=16.8 (peer dependency); in docs/examples use React 19's `createRoot` from `react-dom/client`, never `ReactDOM.render`.
 - Public API changes: update `src/index.tsx`, README, and `docs/index.md` together.
 - Never publish manually or edit `version` in package.json; CI (`publish.yml` on `main`) publishes. PRs run `build.yml` (`npm publish --dry-run`).
 - Don't edit `package-lock.json` by hand; dependabot (weekly, grouped) handles upgrades.
