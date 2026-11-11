@@ -5,7 +5,7 @@ Render React trees from plain JSON-like data. Register components by alias, then
 
 ### Requirements
 * [NodeJS](https://nodejs.org/en/) 18+ (development)
-* React 19 (peer usage; `react` is a devDependency of this package)
+* `react` >= 16.8.0 (peer dependency; CI tests 16.8, 17, 18 and 19). `react` is also a devDependency of this package.
 
 ### API
 * `ReviverProvider` — provides the component registry (`components` prop: alias → component or HTML tag name).
@@ -18,6 +18,8 @@ Render React trees from plain JSON-like data. Register components by alias, then
 ```shell
 npm install @koeroesi86/react-reviver
 ```
+
+Requires `react` >= 16.8.0 (hooks) as a peer dependency. CI smoke-tests React 16.8, 17, 18 and 19.
 
 ```typescript jsx
 /* eslint-disable react/prop-types */
