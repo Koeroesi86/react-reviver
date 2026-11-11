@@ -39,4 +39,4 @@ jobs:
       - name: Package bundle
         run: npm run build
       - name: Package information
-        run: npm publish --dry-run
+        run: npm publish --dry-run --tag latest
