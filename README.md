@@ -19,6 +19,8 @@ Render React trees from plain JSON-like data. Register components by alias, then
 npm install @koeroesi86/react-reviver
 ```
 
+Requires `react` >= 16.8.0 (hooks) as a peer dependency. CI smoke-tests React 16.8, 17, 18 and 19.
+
 ```typescript jsx
 /* eslint-disable react/prop-types */
 import React from "react";

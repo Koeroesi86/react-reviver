@@ -18,12 +18,22 @@
   "publishConfig": {
     "access": "public"
   },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "@types/react": ">=16.8.0"
+  },
+  "peerDependenciesMeta": {
+    "@types/react": {
+      "optional": true
+    }
+  },
   "scripts": {
     "build": "rm -rf ./dist && dts-bundle-generator --config dts.config.js && webpack",
     "dev": "npm run build && webpack --watch --progress",
     "test": "jest",
     "lint": "eslint --cache --cache-location .cache/eslint/ --ext .ts,.tsx src",
-    "generate-version": "node ./scripts/version.js"
+    "generate-version": "node ./scripts/version.js",
+    "test:compat": "node ./scripts/compat-smoke.js"
   },
   "devDependencies": {
     "@testing-library/dom": "^10.4.2",

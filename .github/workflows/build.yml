@@ -40,3 +40,26 @@ jobs:
         run: npm run build
       - name: Package information
         run: npm publish --dry-run --tag latest
+
+  react-compat:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        react: ['16.8.0', '17.0.2', '18.3.1', '19.3.1']
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24'
+          cache: 'npm'
+      - name: Setup
+        run: npm ci --ignore-scripts
+      - name: Package bundle
+        run: npm run build
+      - name: Install React ${{ matrix.react }}
+        run: npm install --no-save --no-package-lock --ignore-scripts --legacy-peer-deps react@${{ matrix.react }} react-dom@${{ matrix.react }}
+      - name: Smoke test
+        run: npm run test:compat
