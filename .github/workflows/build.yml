@@ -13,22 +13,22 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '18'
-          cache: 'yarn'
+          cache: 'npm'
       - name: Persist cache
         uses: actions/cache@v3
         id: local-dot-cache
         with:
           path: .cache
-          key: ${{ runner.os }}-local-dot-cache-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-local-dot-cache-${{ hashFiles('**/package-lock.json') }}
       - name: Setup
-        run: yarn install --frozen-lockfile
+        run: npm ci
       - name: Lint
-        run: yarn lint
+        run: npm run lint
       - name: Test
-        run: yarn test
+        run: npm run test
       - name: Package version
-        run: yarn generate-version
+        run: npm run generate-version
       - name: Package bundle
-        run: yarn build
+        run: npm run build
       - name: Package information
         run: npm publish --dry-run

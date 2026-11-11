@@ -3,12 +3,11 @@
 
 ### Dependencies
 * [NodeJS](https://nodejs.org/en/)
-* [Yarn](https://yarnpkg.com/en/)
 
 ### Usage
 
 ```shell
-yarn add @koeroesi86/react-reviver
+npm install @koeroesi86/react-reviver
 ```
 
 ```typescript jsx
@@ -48,7 +47,7 @@ if (window && document.getElementById("root")) {
 ### Running locally
 
 ```shell
-yarn dev
+npm run dev
 ```
 
 Open [example/index.html](example/index.html) in the browser.
