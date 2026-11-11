@@ -1,7 +1,5 @@
 import React from "react";
-import * as PropTypes from "prop-types";
-import ChildrenReviver from "../children-reviver";
-import { RevivableElement } from "../validators";
+import { reviveNodes } from "../node-reviver";
 import { RevivableComponentType } from "../types";
 
 export interface LayoutProps {
@@ -9,17 +7,7 @@ export interface LayoutProps {
 }
 
 function ReviverLayout({ data }: LayoutProps) {
-  return (
-    <ChildrenReviver>{Array.isArray(data) ? data : [data]}</ChildrenReviver>
-  );
+  return <>{reviveNodes(Array.isArray(data) ? data : [data])}</>;
 }
-
-ReviverLayout.propTypes = {
-  // @ts-ignore TODO
-  data: PropTypes.oneOfType([
-    RevivableElement,
-    PropTypes.arrayOf(RevivableElement),
-  ]).isRequired,
-};
 
 export default ReviverLayout;
