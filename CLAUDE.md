@@ -17,7 +17,7 @@ In some sessions (e.g. the VS Code Flatpak) `node`/`npm` are not on `PATH`. Load
 
 ## Commands
 `npm ci` · `npm run lint` · `npm test` · `npm run build` (dts + webpack → `dist/`). Use npm, not yarn.
-`npm run fallow` runs Fallow dead-code analysis (config in `.fallowrc.json`; also a Stop hook in `.claude/settings.json` and the `Fallow` CI workflow).
+`npm run fallow` runs Fallow dead-code analysis (config in `.fallowrc.json`; also a Stop hook in `.claude/settings.json` and the `Branch build` CI workflow).
 `npm run test:compat` smoke-tests the built bundle against the installed React (build first); supported range `react >=16.8.0`, CI covers 16.8/17/18/19.
 Before finishing a code change: lint + test. Update the snapshot only when output intentionally changed.
 
