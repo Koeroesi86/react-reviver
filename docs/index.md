@@ -3,7 +3,7 @@
 ### Install
 
 ```shell
-yarn add @koeroesi86/react-reviver
+npm install @koeroesi86/react-reviver
 ```
 
 ### Usage example
@@ -11,7 +11,7 @@ yarn add @koeroesi86/react-reviver
 {% highlight tsx linenos %}
 /* eslint-disable react/prop-types */
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import { ComponentRegistry, RevivableComponentType, ReviverLayout, ReviverProvider } from "@koeroesi86/react-reviver";
 
 export const components: ComponentRegistry = {
