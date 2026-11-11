@@ -33,7 +33,8 @@
     "test": "jest",
     "lint": "eslint --cache --cache-location .cache/eslint/ --ext .ts,.tsx src",
     "generate-version": "node ./scripts/version.js",
-    "test:compat": "node ./scripts/compat-smoke.js"
+    "test:compat": "node ./scripts/compat-smoke.js",
+    "example": "node ./example/server.js"
   },
   "devDependencies": {
     "@testing-library/dom": "^10.4.2",
